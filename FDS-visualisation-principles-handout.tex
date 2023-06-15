@@ -1,0 +1,211 @@
+\documentclass[10pt]{article}
+\usepackage{times}
+\usepackage[margin=0.6in,landscape,a4paper]{geometry}
+% \usepackage[handout]{fds}
+% \todosfalse
+\usepackage[math]{iwona}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{enumitem}
+\newcommand{\firstterm}[1]{\textbf{#1}}
+%\renewcommand{\paragraph}[1]{\hrule\hrule\hrule\vspace*{2pt}\noindent\textbf{#1} \vspace{2pt}\hrule\vspace{1pt}\noindent}
+\renewcommand\bibsection{\paragraph{\refname}}
+\setlength{\parindent}{0pt}
+
+\usepackage{titlesec}
+
+\titleformat{\paragraph}
+{\titlerule[1pt]%
+\vspace{.2ex}%
+\normalfont\bfseries}
+{\thesection.}{.2em}{}[\hrule\vspace*{-1ex}]
+
+\begin{document}
+
+\raggedright
+\pagestyle{empty}
+% \maketitle
+
+\begin{center}
+  \large\textbf{Informatics 2 -- Foundations of Data Science: Visualisation
+    principles and guidance}
+\end{center}
+
+\setlist[itemize]{leftmargin=10pt,noitemsep,parsep=0pt}
+
+\setlength{\columnseprule}{.2pt}
+\begin{multicols}{3}
+\paragraph{Principle 1: Show the data} 
+
+Aim to show as much of the data as possible without leading to a
+confusing visualisation. There are often multiple ways of representing
+the same dataset, and no ``right'' answer. The following guidance
+% on arranging the the graphical elements of the plot
+should help show as much of the data as possible:
+\begin{itemize}
+\item \textbf{Choose an appropriate plot type.} Basic types include:
+  \begin{itemize}
+  \item Bar charts: for plotting numeric variables associated with
+    categorical or ordinal variables, e.g.~the mean weight
+    (numeric variable) of male and female (categorical variable)
+    squirrels.
+  \item Line charts: for showing trends of numerical variables over
+    time (a numerical variable).
+  \item Scatterplots: show the relationship between two numeric
+    variables.
+  \item Boxplots: represent the distribution of a numeric variable for
+    multiple categories, e.g.~the weights of male and female
+    squirrels.
+  \item Histograms and density plots: good for showing the
+    distribution of a single variable.
+  \end{itemize}
+\item \textbf{Show multiple variables by using length, shape, size and colour:}
+  \begin{itemize}
+  \item Use shape and colour to create extra dimensions for
+    categorical variables. E.g.~in a scatterplot of squirrel weight
+    versus length, indicate sex using colour, thus displaying 3
+    variables. In addition, indicate age categories (ordinal) by
+    changing the size or the shape of the markers (4 variables).
+    But take care that the plot is not too complex to read.
+    % However, adding information using marker properties can detract
+    % from the plot.
+  \item Barcharts can be extended to two categorical variables and one
+    numerical variable by using colour.
+  \end{itemize}
+\item \textbf{Use colour effectively.} (\citealp{WexlEtal17big}, pp.~14--18)
+  \begin{itemize}
+  \item Choose an appropriate colour scale, depending on if the data
+    is sequential (numeric), diverging (numeric with a zero point in
+    the the scale) or categorical.
+  \item Colour can also be used to highlight features in the plot,
+    e.g.~the largest two bars in a bar plot.
+  \end{itemize}
+\item \textbf{Encourage the eye to compare several pieces of data}, e.g.~by
+  using multiple plots with the same scale.
+  \begin{itemize}
+  \item \citet{WexlEtal17big}, p.~31, is a nice example of how this
+    can work better than using multiple symbols on a plot (p.~30).
+  \end{itemize}
+
+\item \textbf{Present many numbers in a small space}
+  \begin{itemize}
+  \item A boxplot takes up as much space as a barplot, but conveys
+    more information. For example, a boxplot of the squirrel's weight
+    versus sex shows information about the distribution of the weight
+    as well as the median weight.
+  \end{itemize}
+\item \textbf{Choose appropriate transforms}
+  \begin{itemize}
+  \item Transforming data can make features of it clearer. For
+    example, plotting the value of Bitcoin over time shows very little
+    detail about the early history of the currency, when it was not
+    valuable. However, plotting the log of the value of Bitcoin on the
+    $y$-axis allows this detail to be seen.
+  \end{itemize}
+\end{itemize}
+
+
+\paragraph{Principle 2:  Make the meaning of the data clear}
+
+A visualisation is meaningless if it's not labelled. Every plot should have:
+\begin{itemize}
+\item Title or caption
+\item Axis labels as English words
+\item Units given, where appropriate (e.g.~``Length (mm)''
+  \emph{not just} ``Length'')
+\item All variables labelled -- e.g.~a legend indicating the colours
+  used to represent squirrel sex
+\item Use graphical and textual annotation -- e.g.~it can be helpful to
+  highlight a time series with events that you know about
+\end{itemize}
+
+\paragraph{Principle 3: Avoid distorting what the data have to say}
+
+Choices in visualisation design can lead to the instant impression
+given by preattentive processing of the visualisation being quite
+different to the numbers in the dataset. \citet{Tuft82visu1ed} 
+measures the level of distortion in a visualisation by the ``Lie
+factor'':
+\begin{displaymath}
+  \textrm{Lie factor} = \frac{\textrm{size of effect shown in graphic}}{\textrm{size of
+  effect in data}}
+\end{displaymath}
+The following guidelines help to avoid distorting the data:
+\begin{itemize}
+\item \textbf{Use appropriate scales and baselines}
+  \begin{itemize}
+  \item A very common problem is that the baseline (i.e.~the lowest
+    point on the $y-$axis) in a barchart is not zero. This can lead to
+    small differences appearing large.
+  \end{itemize}
+\item \textbf{Be aware of limitations of our perception of size}
+  \begin{itemize}
+  \item Although marker area can be useful for indicating categories,
+    humans are not very good at relating the area to a quantity -- we
+    are much better at comparing lengths.
+  \end{itemize}
+\end{itemize}
+
+
+\paragraph{Principle 4:  Make the data accessible}
+
+A visualisation is meaningless if it's illegible and loses impact if
+it's difficult to read. To ensure data is accessible:
+\begin{itemize}
+\item \textbf{Make sure text is legible}, i.e.~font size of minimum 8 points in
+  a PDF, or about 20 points in a presentation. (It is surprising how
+  often talks are given in which it's impossible to read the labels on
+  plots even from the front row.)
+\item \textbf{Use colours that work for people with colour-vision deficiency.}
+  \citet{WexlEtal17big}, Chapter 1 has an excellent introduction to
+  using colour in visualisations.
+\end{itemize}
+
+
+\paragraph{Principle 5:  Focus on the content}
+
+Give the viewer's brain as little work to do as possible.
+\begin{itemize}
+\item No chartjunk -- e.g.~colours that don't have any meaning.
+\item Reduce clutter
+\item Consistent colours between plots in a study
+\item Correct spelling
+\end{itemize}
+
+
+\bibliographystyle{apalike}
+\bibliography{main}
+\end{multicols}
+\end{document}
+
+% \subsection{Perceptual effectiveness}
+% \label{main:sec:perc-effect}
+
+% \subsection{Storytelling with data}
+% \label{main:sec:storyt-with-data}
+
+% To complement Lab
+
+
+% \video{Quantitative Exploratory data Analysis -- Summary statistics}
+% \label{main:sec:quant-expl-data}
+
+% \comment{This may be revision for many, but might be useful before box
+%   plots are introduced}
+
+% \begin{itemize}
+% \item Mean, Mode, Median
+% \item Percentiles
+% \item Moments of distributions: variance, skew and kurtosis
+% \item Dealing with missing values
+% \item Outliers
+% \end{itemize}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% End: 
+
+% LocalWords:  Wexler et al EDA pre Tukey WexlEtal Anscombe th visu
+% LocalWords:  Playfair Schw bett chartjunk Tufte itemize leftmargin
+% LocalWords:  noitemsep parsep
