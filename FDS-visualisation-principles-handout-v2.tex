@@ -1,17 +1,21 @@
 \documentclass[10pt]{article}
 \usepackage{times}
-\usepackage[top=0.3in,left=0.4in,right=0.4in,bottom=0.3in,landscape,a4paper]{geometry}
+\usepackage[top=0.3in,left=0.3in,right=0.3in,bottom=0.5in,landscape,a4paper,
+footskip=0.2in]{geometry}
 % \usepackage[handout]{fds}
 % \todosfalse
 \usepackage[math]{iwona}
 \usepackage{natbib}
 \usepackage{hyperref}
+\urlstyle{same}
 \usepackage{multicol}
 \usepackage{enumitem}
+\setlist{topsep=0pt}
 \newcommand{\firstterm}[1]{\textbf{#1}}
 %\renewcommand{\paragraph}[1]{\hrule\hrule\hrule\vspace*{2pt}\noindent\textbf{#1} \vspace{2pt}\hrule\vspace{1pt}\noindent}
 
 \usepackage{titlesec}
+\usepackage{fancyhdr}
 
 \titleformat{\paragraph}
 {\titlerule[1pt]%
@@ -48,18 +52,20 @@
     \setlength{\parindent}{\calloutparindent}\noindent\ignorespaces}%
   {\end{tcolorbox}}
 
-
-\newcommand{\principle}[2]{\begin{callout}{#1}\raggedright#2\end{callout}
-}
+\newcommand{\principle}[3]{\begin{callout}{#1}\raggedright#2\tcblower\raggedright#3\end{callout}}
 
 %\renewcommand\bibsection{\paragraph{\refname}}
 %\renewcommand\bibsection{\begin{callout}{\refname}\end{callout}}
-\renewcommand\bibsection{\hrule\textbf{\refname}}
+\renewcommand\bibsection{\vspace{-1.3em}}
 \setlength{\parindent}{0pt}
 
 
 \begin{document}
-
+\fancyfoot[C]{
+  \footnotesize Version 2.0-beta \copyright 2022-2025 by David Sterratt, licensed under CC
+  BY-SA 4.0
+  Source: \url{https://github.com/Inf2-FDS/fds-visualisation}}
+\thispagestyle{fancy}
 \raggedright
 \pagestyle{empty}
 % \maketitle
@@ -71,21 +77,21 @@
 
 \setlist[itemize]{leftmargin=10pt,noitemsep,parsep=0pt}
 
-\setlength{\columnseprule}{.2pt}
+% \setlength{\columnseprule}{.2pt}
 \begin{multicols}{3}
   \principle{Principle 1: Show the data}%
   {Show as much of the data as possible without making a confusing
     visualisation. There are multiple ways of representing the same
-    dataset, and no ``right'' answer.}
-\begin{itemize}
+    dataset, and no ``right'' answer.}%
+{\begin{itemize}[itemsep=1ex]
 \item \textbf{Identify the variables and their type.} For tabular data
-  in a tidy (long) format, each column corresponds to a variable, and
-  is numeric, categorical, ordinal or unstructured.
+  in a tidy (long) format, each column corresponds to a numeric,
+  categorical, ordinal or unstructured variable.
 \item
   \textbf{Choose an appropriate plot type to show one or two
     variables.}
-  The \url{https://www.data-to-viz.com/} tool helps. E.g.:
-  \begin{itemize}
+  Use the guide at \url{https://www.data-to-viz.com/}. E.g.:
+  \begin{itemize}[topsep=0pt]
   \item One numeric variable $\rightarrow$ histogram or density plot
     shows distribution
   \item One categorical variable $\rightarrow$ bar plot
@@ -111,7 +117,7 @@
   % \item Bar charts can be extended to two categorical variables and one
   %   numerical variable by using colour.
   \end{itemize}
-\item \textbf{Consider using a table.} data patterns are clearer in
+\item \textbf{Consider using a table.} Data patterns are clearer in
   tables than graphics. However, tables are a form of visualisation,
   and good for conveying raw data or dealing with large numbers of
   variables.
@@ -124,13 +130,12 @@
     e.g.~the largest two bars in a bar plot or the largest values in
     each column of a table.
   \end{itemize}
-\item \textbf{Encourage the eye to compare several pieces of data}, 
+\item \textbf{Encourage the eye to compare several pieces of data}
   \begin{itemize}
   \item E.g.~use multiple plots with the same scale (``small
     multiples''), which can work better than using large numbers of
     symbols or colours on a single plot
   \end{itemize}
-
 \item \textbf{Present many numbers in a small space}
   \begin{itemize}
   \item E.g.~A box plot of a numeric variable uses as much space as a
@@ -143,30 +148,29 @@
     changes when the variable is both small and large.
   \end{itemize}
 \end{itemize}
-
+}
 
 \principle{Principle 2:  Make the meaning of the data clear}%
-{A visualisation is meaningless if it's not labelled.}
-
-Every plot should have:
+{A visualisation is meaningless if it's not labelled.}%
+{Every plot should have:
 \begin{itemize}
 \item Title or caption
 \item Axis labels as English words
 \item Units given, where appropriate (e.g.~``Length (mm)''
   \emph{not just} ``Length'')
 \item All variables labelled on axes or legends
-\item Graphical and textual annotation where appropriate -- e.g.~it
-  can be helpful to highlight a time series with events that you know
-  about
-\item Description of what any error bars represent, e.g.~95\%
-  confidence interval, standard deviation, or standard error
+\item Graphical and textual annotation where appropriate --
+  e.g.~highlight a time series with known events
+\item Description of any error bars, e.g.~95\% confidence interval,
+  standard deviation, or standard error
 \end{itemize}
+}
 
 \principle{Principle 3: Avoid distorting what the data have to say}%
 {Design choices can mean the instant impression given by preattentive
 processing of the visualisation is quite different to the numbers in
-the dataset.}
-
+the dataset.}%
+{
 % \citet{Tuft82visu1ed} 
 % measures the level of distortion in a visualisation by the ``Lie
 % factor'':
@@ -174,7 +178,7 @@ the dataset.}
 %   \textrm{Lie factor} = \frac{\textrm{size of effect shown in graphic}}{\textrm{size of
 %   effect in data}}
 % \end{displaymath}
-\begin{itemize}
+\begin{itemize}[itemsep=1ex]
 \item \textbf{Use appropriate scales and baselines}
   \begin{itemize}
   \item A common problem is that the baseline (i.e.~the lowest point
@@ -191,13 +195,13 @@ the dataset.}
     many categories
   \end{itemize}
 \end{itemize}
-
+}
 
 \principle{Principle 4: Make the data accessible}%
 {Make visualisations accessible so that they are meaningful for
-  everyone.} %
-
-\begin{itemize}
+  everyone.}%
+{
+\begin{itemize}[itemsep=1ex]
 \item \textbf{Make sure text is legible}, i.e.~font size of minimum
   8~points in a PDF, or about 20 points in a presentation.
   (Surprisingly often in talks, it's impossible to read plot labels,
@@ -206,11 +210,11 @@ the dataset.}
   \citet{WexlEtal17big}, Chapter 1 has an excellent introduction to
   using colour in visualisations.
 \end{itemize}
-
+}
 
 \principle{Principle 5: Focus on the content}%
-{Minimise distractions for the viewer's brain.}
-\begin{itemize}
+{Minimise distractions for the viewer's brain.}%
+{\begin{itemize}
 \item Avoid chartjunk -- e.g.~colours that don't have any meaning, or
   3D bar charts
 \item Reduce clutter -- e.g.~vertical grid lines with a categorical \emph{x}-axis
@@ -218,18 +222,14 @@ the dataset.}
 \item Use an appropriate number of decimal places
 \item Check spelling is correct
 \end{itemize}
+}
 
 \bibliographystyle{apalike}
-\bibliography{main}
+\begin{callout}{Reference}
+\bibliography{main}  
+\end{callout}
+
 \end{multicols}
-
-\vskip0.1em
-
-\begin{center}
-  \footnotesize Version 2.0-beta \copyright 2022-2024 by David Sterratt, licensed under CC
-  BY-SA 4.0
-  Source: \url{https://github.com/Inf2-FDS/fds-visualisation}
-\end{center}
 \end{document}
 
 %%% Local Variables:
