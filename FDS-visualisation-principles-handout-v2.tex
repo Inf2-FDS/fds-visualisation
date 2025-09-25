@@ -117,15 +117,15 @@ footskip=0.2in]{geometry}
   % \item Bar charts can be extended to two categorical variables and one
   %   numerical variable by using colour.
   \end{itemize}
-\item \textbf{Consider using a table.} Data patterns are clearer in
-  tables than graphics. However, tables are a form of visualisation,
-  and good for conveying raw data or dealing with large numbers of
-  variables.
+\item \textbf{Consider using a table.} Data patterns are generally
+  clearer in graphics than tables. However, tables are a form of
+  visualisation, and good for conveying raw data or dealing with large
+  numbers of variables.
 \item \textbf{Use colour effectively.} (\citealp{WexlEtal17big}, pp.~14--18)
   \begin{itemize}
   \item Choose an appropriate colour scale, depending on if the data
     is sequential (numeric), diverging (numeric with a zero point in
-    the the scale) or categorical.
+    the scale) or categorical.
   \item Colour can also be used to highlight features in the visualisation,
     e.g.~the largest two bars in a bar plot or the largest values in
     each column of a table.
@@ -141,11 +141,15 @@ footskip=0.2in]{geometry}
   \item E.g.~A box plot of a numeric variable uses as much space as a
     bar plot, but conveys more information.
   \end{itemize}
+\item \textbf{Consider how much to aggregate} Histogram bin size or
+  merging categories changes the patterns revealed.
 \item \textbf{Choose appropriate transforms}
   \begin{itemize}
   \item E.g.~for a positive variable that varies over many orders of
-    magnitude (e.g.~the value of Bitcoin) a log transform can show
-    changes when the variable is both small and large.
+    magnitude %
+    % (e.g.~the value of Bitcoin)
+    a log transform can show changes when the variable is both small
+    and large.
   \end{itemize}
 \end{itemize}
 }
@@ -181,9 +185,8 @@ the dataset.}%
 \begin{itemize}[itemsep=1ex]
 \item \textbf{Use appropriate scales and baselines}
   \begin{itemize}
-  \item A common problem is that the baseline (i.e.~the lowest point
-    on the $y-$axis) in a bar chart is not zero, leading to small
-    differences appearing large.
+  \item In a bar chart, a non-zero baseline (the lowest point on the
+    $y-$axis) makes small differences look large.
   \end{itemize}
 \item \textbf{Be aware of limitations of human perception}
   \begin{itemize}
