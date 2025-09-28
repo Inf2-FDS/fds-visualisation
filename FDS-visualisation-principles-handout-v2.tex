@@ -64,7 +64,7 @@ footskip=0.2in]{geometry}
 
 \begin{document}
 \fancyfoot[C]{
-  \footnotesize Version 2.0-beta \copyright 2022-2025 by David Sterratt, licensed under CC
+  \footnotesize Version 2.0-beta1 \copyright 2022-2025 by David Sterratt, licensed under CC
   BY-SA 4.0
   Source: \url{https://github.com/Inf2-FDS/fds-visualisation}}
 \thispagestyle{fancy}
@@ -167,11 +167,13 @@ footskip=0.2in]{geometry}
 {A visualisation is meaningless if it's not labelled.}%
 {Every plot should have:
 \begin{itemize}
-\item Title or caption
-\item Axis labels as English words
-\item Units given, where appropriate (e.g.~``Length (mm)''
-  \emph{not just} ``Length'')
-\item All variables labelled on axes or legends
+\item An informative title or caption
+\item All variables labelled with \emph{meaningful} text (e.g.~''Price
+  (US dollars)'' \emph{not} ``x94'' or ``price\_usd'')
+  % on axes or legends
+\item Any units given (e.g.~``Length (mm)'' \emph{not just}
+  ``Length'')
+\item Scales (tick marks, colour bars) for numeric variables
 \item Graphical and textual annotation where appropriate --
   e.g.~highlight a time series with known events
 \item Description of any error bars, e.g.~95\% confidence interval,
@@ -227,9 +229,10 @@ the dataset.}%
 \principle{Principle 5: Focus on the content}%
 {Minimise distractions for the viewer's brain.}%
 {\begin{itemize}
-\item Avoid chartjunk -- e.g.~colours that don't have any meaning, or
-  3D bar charts
-\item Reduce clutter -- e.g.~vertical grid lines with a categorical \emph{x}-axis
+  \item Avoid chartjunk -- e.g.~colours that don't have any meaning or
+    3D bar charts
+  \item Reduce clutter -- e.g.~more tick labels than needed or
+    vertical grid lines with a categorical \emph{x}-axis
 \item Use consistent colours for plots in the same study
 \item Use an appropriate number of decimal places
 \item Check spelling is correct
@@ -251,4 +254,4 @@ the dataset.}%
 
 % LocalWords:  Wexler et al EDA pre Tukey WexlEtal Anscombe th visu
 % LocalWords:  Playfair Schw bett chartjunk Tufte itemize leftmargin
-% LocalWords:  noitemsep parsep
+% LocalWords:  noitemsep parsep usd
