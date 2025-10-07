@@ -16,7 +16,7 @@ Science](https://opencourse.inf.ed.ac.uk/inf2-fds).
 - [Collaborative marking Excel spreadsheet](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-mark-sheet-template.xlsx)
 - [PDF handout of Visualisation Principles and Guidance Version
   2
-  beta`](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v2.pdf)
+  beta](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v2.pdf)
   A new, untested, version produced in response to reflection on
   student feedback and reviewers' comments
 - [Sample rubric](https://github.com/Inf2-FDS/fds-visualisation/blob/main/rubric.pdf)
