@@ -10,7 +10,8 @@ footskip=0.2in]{geometry}
 \urlstyle{same}
 \usepackage{multicol}
 \usepackage{enumitem}
-\setlist{topsep=0pt}
+\setlist[itemize]{topsep=0pt,leftmargin=10pt,noitemsep,parsep=0pt}
+
 \newcommand{\firstterm}[1]{\textbf{#1}}
 %\renewcommand{\paragraph}[1]{\hrule\hrule\hrule\vspace*{2pt}\noindent\textbf{#1} \vspace{2pt}\hrule\vspace{1pt}\noindent}
 
@@ -64,7 +65,7 @@ footskip=0.2in]{geometry}
 
 \begin{document}
 \fancyfoot[C]{
-  \footnotesize Version 2.0-beta1 \copyright 2022-2025 by David Sterratt, licensed under CC
+  \footnotesize Version 2.0-beta2 \copyright 2022-2025 by David Sterratt, licensed under CC
   BY-SA 4.0
   Source: \url{https://github.com/Inf2-FDS/fds-visualisation}}
 \thispagestyle{fancy}
@@ -83,8 +84,6 @@ footskip=0.2in]{geometry}
     principles and guidance}
 \end{center}
 \end{tcolorbox}
-
-\setlist[itemize]{leftmargin=10pt,noitemsep,parsep=0pt}
 
 % \setlength{\columnseprule}{.2pt}
 \begin{multicols}{3}
@@ -139,20 +138,20 @@ footskip=0.2in]{geometry}
     e.g.~the largest two bars in a bar plot or the largest values in
     each column of a table.
   \end{itemize}
-\item \textbf{Encourage the eye to compare several pieces of data}
+\item \textbf{Encourage the eye to compare several pieces of data.}
   \begin{itemize}
   \item E.g.~Use multiple plots with the same scale (``small
     multiples''), which can work better than using large numbers of
     symbols or colours on a single plot.
   \end{itemize}
-\item \textbf{Present many numbers in a small space}
+\item \textbf{Present many numbers in a small space.}
   \begin{itemize}
   \item E.g.~A box plot of a numeric variable uses as much space as a
     bar plot, but conveys more information.
   \end{itemize}
-\item \textbf{Consider how much to aggregate} Histogram bin size or
+\item \textbf{Consider how much to aggregate.} Histogram bin size or
   merging categories changes the patterns revealed.
-\item \textbf{Choose appropriate transforms}
+\item \textbf{Choose appropriate transforms.}
   \begin{itemize}
   \item E.g.~For a positive variable that varies over many orders of
     magnitude %
@@ -194,12 +193,12 @@ the dataset.}%
 %   effect in data}}
 % \end{displaymath}
 \begin{itemize}[itemsep=1ex]
-\item \textbf{Use appropriate scales and baselines}
+\item \textbf{Use appropriate scales and baselines.}
   \begin{itemize}
   \item In a bar chart, a non-zero baseline (the lowest point on the
     $y-$axis) makes small differences look large.
   \end{itemize}
-\item \textbf{Be aware of limitations of human perception}
+\item \textbf{Be aware of limitations of human perception.}
   \begin{itemize}
   \item Humans are better at comparing lengths than areas
     $\rightarrow$ consider whether area represents a given numeric

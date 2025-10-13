@@ -1,0 +1,218 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[10pt]{article}
+\usepackage{times}
+\usepackage[top=0.3in,left=0.3in,right=0.3in,bottom=0.4in,landscape,a4paper,
+footskip=0.2in]{geometry}
+% \usepackage[handout]{fds}
+% \todosfalse
+\usepackage[math]{iwona}
+\usepackage{hyperref}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\usepackage{enumitem}
+\setlist{topsep=0pt,leftmargin=10pt,noitemsep,parsep=0pt}
+\usepackage{fancyhdr}
+
+% For callout boxes 
+\usepackage[skins,breakable]{tcolorbox}
+% \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\usepackage{fontawesome5}
+
+% \newcommand{\principle}[2]{\paragraph{#1} #2 \\[0.2em]\hrule \\[0.2em]}
+
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-standard-color}{HTML}{909090}
+\definecolor{quarto-callout-standard-color-frame}{HTML}{acacac}
+
+\author{}
+\date{}
+
+\begin{document}
+\fancyfoot[C]{
+  \footnotesize Version 2.0-beta2 \copyright 2022-2025 by David Sterratt, licensed under CC
+  BY-SA 4.0
+  Source: \url{https://github.com/Inf2-FDS/fds-visualisation}}
+\thispagestyle{fancy}
+
+\begin{tcolorbox}[leftrule=.15mm,rightrule=.15mm,
+  toprule=.15mm,bottomrule=.15mm,arc=.35mm,
+  colback=quarto-callout-standard-color!35!white,
+  enhanced jigsaw,
+  drop shadow,
+  colframe=quarto-callout-standard-color-frame,top=1mm,bottom=1mm]
+\begin{center}
+  \large\textbf{Informatics 2 -- Foundations of Data Science: Criteria for marking
+visualisation explanations/interpretations and
+code}
+\end{center}
+\end{tcolorbox}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash\bfseries}p{(\columnwidth - 4\tabcolsep) * \real{0.1366}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4899}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3735}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Mark}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Explanation/interpretation}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Code readability}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+4 - Excellent & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{itemize}
+\item
+  Easy to comprehend due to clear structure and precision.
+\item
+  Clear and correct summarisation of multiple patterns and noteworthy
+  features, possibly with sensible explanations or hypotheses for them
+  or relating them to other data or knowledge.
+\item
+  Interpretation means the visualisation makes sense.
+\end{itemize}
+\end{minipage}
+
+& \begin{minipage}[t]{\linewidth}\raggedright
+Code is very easy to read, due to
+
+\begin{itemize}
+\item
+  code being clean with appropriate comments
+\item
+  appropriate use of pandas functions (such as pd.merge() and
+  .groupby()).
+\end{itemize}
+\end{minipage} \\
+\hline
+3 - Good & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{itemize}
+\item
+  Straightforward to comprehend due to reasonably clear structure and
+  precision.
+\item
+  Clear and correct summarisation of some patterns and noteworthy
+  features.
+\item
+  Interpretation has added significantly to the visualisation.
+\end{itemize}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Code is easy to read
+
+\begin{itemize}
+\item
+  due to code being clean
+\item
+  appropriate use of pandas functions (such as pd.merge() and
+  .groupby()).
+\end{itemize}
+\end{minipage}
+
+\\
+\hline
+2 - Fair & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{itemize}
+\item
+  Somewhat difficult to comprehend due to structure or vagueness
+\item
+  but is still clear that a few patterns and noteworthy features have
+  been summarised or identified correctly, though there may be minor
+  errors.
+\item
+  Interpretation has added a bit to the visualisation.
+\end{itemize}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Code is understandable with some work due to EITHER:
+
+\begin{itemize}
+\item
+  Not being clean, for example with commented out or unnecessary code
+\item
+  but still using pandas functions appropriately
+\end{itemize}
+
+OR
+
+\begin{itemize}
+\item
+  Being clean
+\item
+  but using multiple lines of code to achieve what could have been done
+  with pandas functions.
+\end{itemize}
+\end{minipage}
+
+\\
+\hline
+1 - Inadequate & \begin{minipage}[t]{\linewidth}\raggedright
+\begin{itemize}
+\item
+  Very difficult to comprehend, due to poor structure or vagueness,
+\item
+  but at least one pattern appears to have been summarised correctly or
+  a noteworthy feature identified.
+\item
+  Maybe some significant errors.
+\item
+  Interpretation has not added to visualisation.
+\end{itemize}
+\end{minipage}
+
+& \begin{minipage}[t]{\linewidth}\raggedright
+Code is difficult to understand due to
+
+\begin{itemize}
+\item
+  not being clean and unclear code
+\item
+  probably not using pandas functions.
+\end{itemize}
+\end{minipage} \\
+\hline
+0 - Absent & No meaningful interpretation. & Code is clearly not
+functional.
+
+\\
+\end{longtable}
+
+\end{document}
+
+% LocalWords:  unicode hyperref url groupby
