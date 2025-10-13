@@ -10,14 +10,21 @@ Science](https://opencourse.inf.ed.ac.uk/inf2-fds).
   exercise](https://github.com/Inf2-FDS/fds-visualisation/blob/main/ukcots-2024-sterratt-2024-06-11.pdf),
   given to the [UK Conference on Teaching
   Statistics](https://www.ukcots.org/) 2024
-- [PDF handout of Visualisation Principles and Guidance Version
+- [PDF handout of Visualisation Principles and Guidance, Version
   1](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v1.pdf):
   The version of the principles and guidance used in the talk
 - [Collaborative marking Excel spreadsheet](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-mark-sheet-template.xlsx)
-- [PDF handout of Visualisation Principles and Guidance Version
+- [PDF handout of Visualisation Principles and Guidance, Version
   2
-  beta](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v2.pdf)
+  beta](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v2.pdf):
   A new, untested, version produced in response to reflection on
   student feedback and reviewers' comments
+- [PDF handout of Criteria for marking visualisation explanations/interpretations and code, Version
+  2
+  beta](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-explanation-code-criteria-v2.pdf):
+  Criteria used for marking explanations/interpretations of
+  visualisations and code in the collaborative marking exercise - see
+  spreadsheet above
+
 <!--  LocalWords:  FDS
  --> 
