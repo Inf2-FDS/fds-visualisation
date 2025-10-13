@@ -25,6 +25,9 @@ Science](https://opencourse.inf.ed.ac.uk/inf2-fds).
   Criteria used for marking explanations/interpretations of
   visualisations and code in the collaborative marking exercise - see
   spreadsheet above
-
+- [Sample
+  rubric](https://github.com/Inf2-FDS/fds-visualisation/blob/main/rubric.pdf)
+  for summative visualisation assignment
+- [Font size demo code in Python and R](font-size-demo)
 <!--  LocalWords:  FDS
  --> 
