@@ -1,0 +1,255 @@
+\documentclass[10pt]{article}
+\usepackage{times}
+\usepackage[top=0.3in,left=0.3in,right=0.3in,bottom=0.38in,landscape,
+footskip=0.2in]{geometry}
+\usepackage[math]{iwona}
+\usepackage{natbib}
+\usepackage{hyperref}
+\urlstyle{same}
+\usepackage{multicol}
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0pt,leftmargin=5pt,labelsep=1pt,noitemsep,parsep=0pt}
+\setlist[itemize,1]{label=\footnotesize\textbullet}
+\frenchspacing
+\newcommand{\firstterm}[1]{\textbf{#1}}
+%\renewcommand{\paragraph}[1]{\hrule\hrule\hrule\vspace*{2pt}\noindent\textbf{#1} \vspace{2pt}\hrule\vspace{1pt}\noindent}
+
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+\titleformat{\paragraph}
+{\titlerule[1pt]%
+\vspace{.2ex}%
+\normalfont\bfseries}
+{\thesection.}{.2em}{}[\hrule\vspace*{-1ex}]
+
+
+% For callout boxes 
+\usepackage[skins,breakable]{tcolorbox}
+% \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\usepackage{fontawesome5}
+
+% \newcommand{\principle}[2]{\paragraph{#1} #2 \\[0.2em]\hrule \\[0.2em]}
+
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-standard-color}{HTML}{909090}
+\definecolor{quarto-callout-standard-color-frame}{HTML}{acacac}
+
+\newlength{\calloutparindent}
+\newenvironment{callout}[2][standard]{
+  \setlength{\calloutparindent}{\parindent}
+  \begin{tcolorbox}[enhanced jigsaw,
+    leftrule=.15mm, toprule=.15mm,
+    colframe=quarto-callout-#1-color-frame, opacityback=0,
+    colback=white, coltitle=black, rightrule=.15mm, breakable,
+    colbacktitle=quarto-callout-#1-color!50!white,
+    opacitybacktitle=0.6, titlerule=0mm, left=1mm,right=1mm,
+    title=\textcolor{quarto-callout-#1-color}{\expandafter\csname
+      quartocallout#1icon\endcsname}{\textbf{#2}},
+    % title after break={\small #2 (ctd)},
+    drop shadow,
+    bottomrule=.15mm, toptitle=1mm, arc=.35mm, bottomtitle=1mm,
+    before=\par\medskip]%
+    \setlength{\parindent}{\calloutparindent}\noindent\ignorespaces}%
+  {\end{tcolorbox}}
+
+\newcommand{\principle}[3]{\begin{callout}{#1}\raggedright#2\tcblower\raggedright#3\end{callout}}
+
+%\renewcommand\bibsection{\paragraph{\refname}}
+%\renewcommand\bibsection{\begin{callout}{\refname}\end{callout}}
+\renewcommand\bibsection{\vspace{-1.3em}}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+\fancyfoot[C]{
+  \footnotesize Version 2.0-beta3 \copyright 2022-2025 by David Sterratt, licensed under CC
+  BY-SA 4.0
+  Source: \url{https://github.com/Inf2-FDS/fds-visualisation}}
+\thispagestyle{fancy}
+\raggedright
+\pagestyle{empty}
+% \maketitle
+
+\begin{tcolorbox}[leftrule=.15mm,rightrule=.15mm,
+  toprule=.15mm,bottomrule=.15mm,arc=.35mm,
+  colback=quarto-callout-standard-color!35!white,
+  enhanced jigsaw,
+  drop shadow,
+  colframe=quarto-callout-standard-color-frame,top=1mm,bottom=1mm,
+  halign=flush center]
+  \large\textbf{Informatics 2 -- Foundations of Data Science: Visualisation
+    principles and guidance}
+\end{tcolorbox}
+
+% \setlength{\columnseprule}{.2pt}
+\setlength{\columnsep}{5pt}
+\begin{multicols}{3}
+  \principle{Principle 1: Show the data}%
+  {Show as much of the data as possible without making a confusing
+    visualisation. There are multiple ways of representing the same
+    dataset, and no ``right'' answer.}%
+{\begin{itemize}[itemsep=1ex]
+\item \textbf{Identify the variables and their type.} For tabular data
+  in a tidy (long) format, each column corresponds to a numeric,
+  categorical, ordinal or unstructured variable.
+\item
+  \textbf{Choose an appropriate plot type to show one or two
+    variables.}
+  Use the guide at \url{https://www.data-to-viz.com/}. E.g.:
+  \begin{itemize}[topsep=0pt]
+  \item One numeric variable $\rightarrow$ histogram or density plot
+    shows distribution
+  \item One categorical variable $\rightarrow$ bar plot
+    shows counts
+  \item One categorical variable and one numeric variable
+    $\rightarrow$ bar plot can show mean of numeric variable for each
+    category; box plot or violin plot show distribution.
+  \item Two unordered numeric variables $\rightarrow$ scatter plot
+    shows relationship
+  \item One ordered and one ordered numeric variable (e.g.~time series)
+    $\rightarrow$ line plot
+  \end{itemize}
+\item
+  \textbf{Consider showing extra variables by using length, shape,
+    size and colour.}
+  \begin{itemize}
+  \item E.g.~In a scatter plot (two numeric variables), the colour and
+    shape of each marker can represent two categorical variables, thus
+    displaying four variables. Size can represent ordinal variables.
+  \item But assess whether the plot is too complex to read.
+    % However, adding information using marker properties can detract
+    % from the plot.
+  % \item Bar charts can be extended to two categorical variables and one
+  %   numerical variable by using colour.
+  \end{itemize}
+\item \textbf{Consider using a table.} Data patterns are generally
+  clearer in graphics than tables. However, tables are a form of
+  visualisation, and good for conveying raw data or dealing with large
+  numbers of variables.
+\item \textbf{Use colour effectively.} (\citealp{WexlEtal17big},\,pp.~14--18)
+  \begin{itemize}
+  \item Choose an appropriate colour scale, depending on if the data
+    is sequential (numeric), diverging (numeric with a zero point in
+    the scale) or categorical.
+  \item Colour can also be used to highlight features in the visualisation,
+    e.g.~the largest two bars in a bar plot or the largest values in
+    each column of a table.
+  \end{itemize}
+\item \textbf{Encourage the eye to compare several pieces of data.}
+  \begin{itemize}
+  \item E.g.~Use multiple plots with the same scale (``small
+    multiples''), which can work better than using large numbers of
+    symbols or colours on a single plot.
+  \end{itemize}
+\item \textbf{Present many numbers in a small space.}
+  \begin{itemize}
+  \item E.g.~A box plot of a numeric variable uses as much space as a
+    bar plot, but conveys more information.
+  \end{itemize}
+\item \textbf{Consider how much to aggregate.} Histogram bin size or
+  merging categories changes the patterns revealed.
+\item \textbf{Choose appropriate transforms.}
+  \begin{itemize}
+  \item E.g.~For a positive variable that varies over many orders of
+    magnitude %
+    % (e.g.~the value of Bitcoin)
+    a log transform can show changes when the variable is both small
+    and large.
+  \end{itemize}
+\end{itemize}
+}
+
+\principle{Principle 2:  Make the meaning of the data clear}%
+{A visualisation is meaningless if it's not labelled.}%
+{Every plot should have:
+\begin{itemize}
+\item An informative title or caption
+\item All variables labelled with \emph{meaningful} text (e.g.~''Price
+  (US dollars)'' \emph{not} ``x94'' or ``price\_usd'')
+  % on axes or legends
+\item Any units given (e.g.~``Length (mm)'' \emph{not just}
+  ``Length'')
+\item Scales (tick marks, colour bars) for numeric variables
+\item Graphical and textual annotation where appropriate --
+  e.g.~highlight a time series with known events
+\item Description of any error bars, e.g.~95\% confidence interval,
+  standard deviation, or standard error
+\end{itemize}
+}
+
+\principle{Principle 3: Avoid distorting what the data have to say}%
+{Design choices can mean the instant impression given by preattentive
+processing of the visualisation is quite different to the numbers in
+the dataset.}%
+{
+% \citet{Tuft82visu1ed} 
+% measures the level of distortion in a visualisation by the ``Lie
+% factor'':
+% \begin{displaymath}
+%   \textrm{Lie factor} = \frac{\textrm{size of effect shown in graphic}}{\textrm{size of
+%   effect in data}}
+% \end{displaymath}
+\begin{itemize}[itemsep=1ex]
+\item \textbf{Use appropriate scales and baselines.}
+  \begin{itemize}
+  \item In a bar chart, a non-zero baseline (the lowest point on the
+    $y-$axis) makes small differences look large.
+  \end{itemize}
+\item \textbf{Be aware of limitations of human perception.}
+  \begin{itemize}
+  \item Humans are better at comparing lengths than areas
+    $\rightarrow$ consider whether area represents a given numeric
+    variable well
+  \item Humans are better at comparing lengths than angles
+    $\rightarrow$ consider alternatives to pie charts, especially with
+    many categories
+  \end{itemize}
+\end{itemize}
+}
+
+\principle{Principle 4: Make the data accessible}%
+{Make visualisations accessible so that they are meaningful for
+  everyone.}%
+{
+\begin{itemize}[itemsep=1ex]
+\item \textbf{Make sure text is legible}, i.e.~font size of minimum
+  8~points in a PDF, or about 20 points in a presentation.
+  (Surprisingly often in talks, it's impossible to read plot labels,
+  even from the front row.)
+\item \textbf{Use colours that work for people with colour-vision deficiency.}
+  \citet{WexlEtal17big}, Chapter 1 has an excellent introduction to
+  using colour in visualisations.
+\end{itemize}
+}
+
+\principle{Principle 5: Focus on the content}%
+{Minimise distractions for the viewer's brain.}%
+{\begin{itemize}
+  \item Avoid chartjunk -- e.g.~colours that don't have any meaning or
+    3D bar charts
+  \item Reduce clutter -- e.g.~more tick labels than needed or
+    vertical grid lines with a categorical \emph{x}-axis
+\item Use consistent colours for plots in the same study
+\item Use an appropriate number of decimal places
+\item Check spelling is correct
+\end{itemize}
+}
+
+\bibliographystyle{apalike}
+\begin{callout}{Reference}
+  \bibliography{main}
+\vspace{-0.5em}  
+\end{callout}
+
+\end{multicols}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% End:
+
+% LocalWords:  Wexler et al EDA pre Tukey WexlEtal Anscombe th visu
+% LocalWords:  Playfair Schw bett chartjunk Tufte itemize leftmargin
+% LocalWords:  noitemsep parsep usd
