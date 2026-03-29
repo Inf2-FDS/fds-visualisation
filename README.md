@@ -18,16 +18,12 @@ university data science course', _Teach. Stat._ (2026),
   1](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v1.pdf):
   The version of the principles and guidance used in the talk
 - [Collaborative marking Excel spreadsheet](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-mark-sheet-template.xlsx)
-- [PDF handout of Visualisation Principles and Guidance, Version
-  2
-  beta3 for A4
+- [PDF handout of Visualisation Principles and Guidance, Version&nbsp;2.0&nbsp;beta3 for A4
   paper](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v2.pdf)
   and [for US letter paper](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v2-letter.pdf):
   A new, untested, version produced in response to reflection on
   student feedback and paper reviewers' comments
-- [PDF handout of Criteria for marking visualisation explanations/interpretations and code, Version
-  3
-  beta](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-explanation-code-criteria-v2.pdf):
+- [PDF handout of Criteria for marking visualisation explanations/interpretations and code, Version&nbsp;2.0&nbsp;beta3](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-explanation-code-criteria-v2.pdf):
   Criteria used for marking explanations/interpretations of
   visualisations and code in the collaborative marking exercise - see
   spreadsheet above
