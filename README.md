@@ -9,7 +9,11 @@ Science](https://opencourse.inf.ed.ac.uk/inf2-fds).
   principles, and how they are used in a collaborative marking
   exercise](https://github.com/Inf2-FDS/fds-visualisation/blob/main/ukcots-2024-sterratt-2024-06-11.pdf),
   given to the [UK Conference on Teaching
-  Statistics](https://www.ukcots.org/) 2024
+  Statistics](https://www.ukcots.org/) 2024, and published as D. C. Sterratt, N.
+Rohani, and K. Gal, 'Actionable visualization
+principles and guidance for a foundational
+university data science course', _Teach. Stat._ (2026),
+1–14, [DOI 10.1002/test.70037](https://dx.doi.org/10.1002/test.70037).
 - [PDF handout of Visualisation Principles and Guidance, Version
   1](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v1.pdf):
   The version of the principles and guidance used in the talk
@@ -20,7 +24,7 @@ Science](https://opencourse.inf.ed.ac.uk/inf2-fds).
   paper](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v2.pdf)
   and [for US letter paper](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v2-letter.pdf):
   A new, untested, version produced in response to reflection on
-  student feedback and reviewers' comments
+  student feedback and paper reviewers' comments
 - [PDF handout of Criteria for marking visualisation explanations/interpretations and code, Version
   3
   beta](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-explanation-code-criteria-v2.pdf):
