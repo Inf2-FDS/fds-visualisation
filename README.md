@@ -5,15 +5,16 @@ principles and guidance used in the University of Edinburgh School of
 Informatics course [Informatics 2 - Foundations of Data
 Science](https://opencourse.inf.ed.ac.uk/inf2-fds).
 
+- [Publication describing this work](https://dx.doi.org/10.1002/test.70037): D. C. Sterratt, N. Rohani, and K. Gal, 'Actionable visualization
+principles and guidance for a foundational
+university data science course', _Teach. Stat._ (2026),
+1–14, [DOI 10.1002/test.70037](https://dx.doi.org/10.1002/test.70037).
+
 - [Slides of talk describing Version 1 of the visualisation
   principles, and how they are used in a collaborative marking
   exercise](https://github.com/Inf2-FDS/fds-visualisation/blob/main/ukcots-2024-sterratt-2024-06-11.pdf),
   given to the [UK Conference on Teaching
-  Statistics](https://www.ukcots.org/) 2024, and published as D. C. Sterratt, N.
-Rohani, and K. Gal, 'Actionable visualization
-principles and guidance for a foundational
-university data science course', _Teach. Stat._ (2026),
-1–14, [DOI 10.1002/test.70037](https://dx.doi.org/10.1002/test.70037).
+  Statistics](https://www.ukcots.org/) 2024, and
 - [PDF handout of Visualisation Principles and Guidance, Version
   1](https://github.com/Inf2-FDS/fds-visualisation/blob/main/FDS-visualisation-principles-handout-v1.pdf):
   The version of the principles and guidance used in the talk
